@@ -333,15 +333,6 @@ along with this software (see the LICENSE.md file). If not, see
     </div><!-- /.navbar-container -->
 </div>
 
-<#--<div id="apps-root">-->
-    <input type="hidden" id="confMoquiSessionToken" value="${ec.web.sessionToken}">
-    <input type="hidden" id="confAppHost" value="${ec.web.getHostName(true)}">
-    <input type="hidden" id="confAppRootPath" value="${ec.web.servletContext.contextPath}">
-    <input type="hidden" id="confBasePath" value="${ec.web.servletContext.contextPath}/apps">
-    <input type="hidden" id="confLinkBasePath" value="${ec.web.servletContext.contextPath}/ace">
-    <input type="hidden" id="confUserId" value="${ec.user.userId!''}">
-    <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">
-
 <#--<div class="main-container ace-save-state" id="main-container">-->
 <div class="main-container ace-save-state" id="main-container">
     <#--<script type="text/javascript">-->
