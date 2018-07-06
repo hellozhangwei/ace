@@ -836,11 +836,9 @@ along with this software (see the LICENSE.md file). If not, see
                             <input type="hidden" id="confLinkBasePath" value="${ec.web.servletContext.contextPath}/ace">
                             <input type="hidden" id="confUserId" value="${ec.user.userId!''}">
                             <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">
-                                <div class="container-fluid">
-                                    <div class="side-body">
-                                        <subscreens-active></subscreens-active>
-                                    </div>
-                                </div>
+
+                            <subscreens-active></subscreens-active>
+
                         </div>
 
                     </div><!-- /.col -->
@@ -852,25 +850,7 @@ along with this software (see the LICENSE.md file). If not, see
     <div class="footer">
         <div class="footer-inner">
             <div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application © 2013-2014
-						</span>
-
-                &nbsp; &nbsp;
-                <span class="action-buttons">
-							<a href="#">
-								<i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-							</a>
-
-							<a href="#">
-								<i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-							</a>
-
-							<a href="#">
-								<i class="ace-icon fa fa-rss-square orange bigger-150"></i>
-							</a>
-						</span>
+                Built on Moqui Framework
             </div>
         </div>
     </div>
@@ -880,54 +860,6 @@ along with this software (see the LICENSE.md file). If not, see
     </a>
 </div><!--end main-container-->
 
-<#--</div><!--end #apps-root&ndash;&gt;-->
-<!-- basic scripts -->
-
-<!--[if !IE]> -->
-<#--<script src="/ace/assetsjs/jquery-2.1.4.min.js"></script>-->
-
-<!-- <![endif]-->
-
-<!--[if IE]>
-<!--<script src="/ace/assetsjs/jquery-1.11.3.min.js"></script>-->
-<![endif]-->
-<#--<script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='/ace/assetsjs/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-</script>-->
-<#--<script src="/ace/assetsjs/bootstrap.min.js"></script>-->
-
-<!-- page specific plugin scripts -->
-
-<!--[if lte IE 8]>
-  <!--<script src="/ace/assets/js/excanvas.min.js"></script>-->
-<![endif]-->
-<#--<script src="/ace/assets/js/jquery-ui.custom.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.ui.touch-punch.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.easypiechart.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.sparkline.index.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.flot.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.flot.pie.min.js"></script>-->
-<#--<script src="/ace/assets/js/jquery.flot.resize.min.js"></script>-->
-
 <!-- ace scripts -->
 <script src="/ace/assets/js/ace-elements.min.js"></script>
 <script src="/ace/assets/js/ace.min.js"></script>
-<#--
-
-<script>
-
-    alert('===' + $("#sidebar"))
-//    function () {
-        if (!a("#sidebar").hasClass("h-sidebar")) {
-            if (this.checked) a("#sidebar li").addClass("hover").filter(".open").removeClass("open").find("> .submenu").css("display", "none"); else {
-                a("#sidebar li.hover").removeClass("hover");
-                var b = a("#ace-settings-compact");
-                b.length > 0 && b.get(0).checked && b.trigger("click")
-            }
-            a(".sidebar[data-sidebar-hover=true]").ace_sidebar_hover("reset"), a(".sidebar[data-sidebar-scroll=true]").ace_sidebar_scroll("reset"), ace.vars.old_ie && ace.helper.redraw(a("#sidebar")[0])
-        }
-//    }
-
-
-</script>
--->
