@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+This software is in the public domain under CC0 1.0 Universal plus a 
+Grant of Patent License.
+
+To the extent possible under law, the author(s) have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.
+
+You should have received a copy of the CC0 Public Domain Dedication
+along with this software (see the LICENSE.md file). If not, see
+<http://creativecommons.org/publicdomain/zero/1.0/>.
+-->
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-include="false" require-authentication="false" history="false">
+
+    <transition name="login" require-session-token="false"><actions><script>ec.user.loginUser(username, password)</script></actions>
+        <default-response type="screen-last"/><error-response url="."/></transition>
+    <transition name="logout"><actions><script>ec.user.logoutUser()</script></actions>
+        <default-response url="/"/><error-response url="."/></transition>
+    <transition name="resetPassword"><service-call name="org.moqui.impl.UserServices.reset#Password"/>
+        <default-response url="."/></transition>
+    <transition name="changePassword"><service-call name="org.moqui.impl.UserServices.update#Password"/>
+        <default-response url="../Login"/><error-response url="."/></transition>
+    <transition name="createInitialAdminAccount"><service-call name="org.moqui.impl.UserServices.create#InitialAdminAccount"/>
+        <default-response url="../Login"/><error-response url="."/></transition>
+
+    <pre-actions><script>
+        // if user already logged in redirect to root
+        if (ec.user.userId) sri.sendRedirectAndStopRender('/')
+
+        // jQuery/UI
+        //html_scripts.add('/libs/jquery/jquery.min.js')
+        // Bootstrap
+        //html_scripts.add('/libs/twitter-bootstrap/js/bootstrap.min.js')
+        // Moqui webroot layout
+//        html_stylesheets.add('/ace/assets/css/bootstrap.min.css')
+//        html_stylesheets.add('/ace/assets/font-awesome/4.5.0/css/font-awesome.min.css')
+//        html_stylesheets.add('/ace/assets/css/fonts.googleapis.com.css')
+//        html_stylesheets.add('/ace/assets/css/ace.min.css')
+//        html_stylesheets.add('/ace/assets/css/ace-rtl.min.css')
+    </script></pre-actions>
+
+    <widgets>
+         <render-mode><text type="html" location="component://ace/screen/Login.ftl"/></render-mode>
+    </widgets>
+</screen>
