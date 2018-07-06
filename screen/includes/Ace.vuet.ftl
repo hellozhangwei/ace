@@ -383,212 +383,54 @@ along with this software (see the LICENSE.md file). If not, see
             </div>
         </div><!-- /.sidebar-shortcuts -->
 
-        <ul class="nav nav-list" style="top: 0px;">
-            <li class="active">
-                <a href="index.html">
-                    <i class="menu-icon fa fa-tachometer"></i>
-                    <span class="menu-text"> Dashboard </span>
-                </a>
+        <ul class="nav nav-list" >
 
-                <b class="arrow"></b>
-            </li>
-
-            <li class="">
-                <a href="#" class="dropdown-toggle">
-                    <i class="menu-icon fa fa-desktop"></i>
-                    <span class="menu-text">
-								UI &amp; Elements
-							</span>
-
-                    <b class="arrow fa fa-angle-down"></b>
-                </a>
+            <li>
+                <a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-desktop"></i><span class="menu-text">HiveMind PM </span><b class="arrow fa fa-angle-down"></b></a>
 
                 <b class="arrow"></b>
 
                 <ul class="submenu">
-                    <li class="">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-caret-right"></i>
 
-                            Layouts
-                            <b class="arrow fa fa-angle-down"></b>
+
+                    <li><a href="/ace/hm/dashboard"><i class="menu-icon fa fa-caret-right"></i>Dashboard</a><b class="arrow"></b></li>
+
+                    <li >
+                        <a href="/ace/hm/Search">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Search
                         </a>
 
                         <b class="arrow"></b>
-
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="top-menu.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Top Menu
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="two-menu-1.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Two Menus 1
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="two-menu-2.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Two Menus 2
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="mobile-menu-1.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Default Mobile Menu
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="mobile-menu-2.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Mobile Menu 2
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="mobile-menu-3.html">
-                                    <i class="menu-icon fa fa-caret-right"></i>
-                                    Mobile Menu 3
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-                        </ul>
                     </li>
-
-                    <li class="">
-
-                        <a href="getNavHref(1)">
+                    <li >
+                        <a href="/ace/hm/Project/FindProject">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Typography
+                            Projects
                         </a>
-                           <#--<m-link :href="getNavHref(1)">test <i class="menu-icon fa fa-caret-right"></i></m-link>-->
+
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="elements.html">
+                    <li >
+                        <a href="/ace/hm/Task/FindTask">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Elements
+                            Tasks
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
                     <li class="">
-                        <a href="buttons.html">
+                        <a href="/ace/hm/Request/FindRequest">
                             <i class="menu-icon fa fa-caret-right"></i>
-                            Buttons &amp; Icons
+                            Requests
                         </a>
 
                         <b class="arrow"></b>
                     </li>
 
-                    <li class="">
-                        <a href="content-slider.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Content Sliders
-                        </a>
 
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="treeview.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Treeview
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="jquery-ui.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            jQuery UI
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="nestable-list.html">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Nestable Lists
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
-
-                    <li class="">
-                        <a href="#" class="dropdown-toggle">
-                            <i class="menu-icon fa fa-caret-right"></i>
-
-                            Three Level Menu
-                            <b class="arrow fa fa-angle-down"></b>
-                        </a>
-
-                        <b class="arrow"></b>
-
-                        <ul class="submenu">
-                            <li class="">
-                                <a href="#">
-                                    <i class="menu-icon fa fa-leaf green"></i>
-                                    Item #1
-                                </a>
-
-                                <b class="arrow"></b>
-                            </li>
-
-                            <li class="">
-                                <a href="#" class="dropdown-toggle">
-                                    <i class="menu-icon fa fa-pencil orange"></i>
-
-                                    4th level
-                                    <b class="arrow fa fa-angle-down"></b>
-                                </a>
-
-                                <b class="arrow"></b>
-
-                                <ul class="submenu">
-                                    <li class="">
-                                        <a href="#">
-                                            <i class="menu-icon fa fa-plus purple"></i>
-                                            Add Product
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="#">
-                                            <i class="menu-icon fa fa-eye pink"></i>
-                                            View Products
-                                        </a>
-
-                                        <b class="arrow"></b>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </li>
 
@@ -1070,225 +912,3 @@ along with this software (see the LICENSE.md file). If not, see
 <!-- ace scripts -->
 <script src="/ace/assets/js/ace-elements.min.js"></script>
 <script src="/ace/assets/js/ace.min.js"></script>
-
-<!-- inline scripts related to this page -->
-<#--
-<script type="text/javascript">
-    jQuery(function($) {
-        $('.easy-pie-chart.percentage').each(function(){
-            var $box = $(this).closest('.infobox');
-            var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
-            var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
-            var size = parseInt($(this).data('size')) || 50;
-            $(this).easyPieChart({
-                barColor: barColor,
-                trackColor: trackColor,
-                scaleColor: false,
-                lineCap: 'butt',
-                lineWidth: parseInt(size/10),
-                animate: ace.vars['old_ie'] ? false : 1000,
-                size: size
-            });
-        })
-
-        $('.sparkline').each(function(){
-            var $box = $(this).closest('.infobox');
-            var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
-            $(this).sparkline('html',
-                    {
-                        tagValuesAttribute:'data-values',
-                        type: 'bar',
-                        barColor: barColor ,
-                        chartRangeMin:$(this).data('min') || 0
-                    });
-        });
-
-
-        //flot chart resize plugin, somehow manipulates default browser resize event to optimize it!
-        //but sometimes it brings up errors with normal resize event handlers
-//        $.resize.throttleWindow = false;
-
-        var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
-        var data = [
-            { label: "social networks",  data: 38.7, color: "#68BC31"},
-            { label: "search engines",  data: 24.5, color: "#2091CF"},
-            { label: "ad campaigns",  data: 8.2, color: "#AF4E96"},
-            { label: "direct traffic",  data: 18.6, color: "#DA5430"},
-            { label: "other",  data: 10, color: "#FEE074"}
-        ]
-        function drawPieChart(placeholder, data, position) {
-            $.plot(placeholder, data, {
-                series: {
-                    pie: {
-                        show: true,
-                        tilt:0.8,
-                        highlight: {
-                            opacity: 0.25
-                        },
-                        stroke: {
-                            color: '#fff',
-                            width: 2
-                        },
-                        startAngle: 2
-                    }
-                },
-                legend: {
-                    show: true,
-                    position: position || "ne",
-                    labelBoxBorderColor: null,
-                    margin:[-30,15]
-                }
-                ,
-                grid: {
-                    hoverable: true,
-                    clickable: true
-                }
-            })
-        }
-        drawPieChart(placeholder, data);
-
-        /**
-         we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
-         so that's not needed actually.
-         */
-        placeholder.data('chart', data);
-        placeholder.data('draw', drawPieChart);
-
-
-        //pie chart tooltip example
-        var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
-        var previousPoint = null;
-
-        placeholder.on('plothover', function (event, pos, item) {
-            if(item) {
-                if (previousPoint != item.seriesIndex) {
-                    previousPoint = item.seriesIndex;
-                    var tip = item.series['label'] + " : " + item.series['percent']+'%';
-                    $tooltip.show().children(0).text(tip);
-                }
-                $tooltip.css({top:pos.pageY + 10, left:pos.pageX + 10});
-            } else {
-                $tooltip.hide();
-                previousPoint = null;
-            }
-
-        });
-
-        /////////////////////////////////////
-        $(document).one('ajaxloadstart.page', function(e) {
-            $tooltip.remove();
-        });
-
-
-
-
-        var d1 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.5) {
-            d1.push([i, Math.sin(i)]);
-        }
-
-        var d2 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.5) {
-            d2.push([i, Math.cos(i)]);
-        }
-
-        var d3 = [];
-        for (var i = 0; i < Math.PI * 2; i += 0.2) {
-            d3.push([i, Math.tan(i)]);
-        }
-
-
-        var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
-        $.plot("#sales-charts", [
-            { label: "Domains", data: d1 },
-            { label: "Hosting", data: d2 },
-            { label: "Services", data: d3 }
-        ], {
-            hoverable: true,
-            shadowSize: 0,
-            series: {
-                lines: { show: true },
-                points: { show: true }
-            },
-            xaxis: {
-                tickLength: 0
-            },
-            yaxis: {
-                ticks: 10,
-                min: -2,
-                max: 2,
-                tickDecimals: 3
-            },
-            grid: {
-                backgroundColor: { colors: [ "#fff", "#fff" ] },
-                borderWidth: 1,
-                borderColor:'#555'
-            }
-        });
-
-
-        $('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-        function tooltip_placement(context, source) {
-            var $source = $(source);
-            var $parent = $source.closest('.tab-content')
-            var off1 = $parent.offset();
-            var w1 = $parent.width();
-
-            var off2 = $source.offset();
-            //var w2 = $source.width();
-
-            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-            return 'left';
-        }
-
-
-        $('.dialogs,.comments').ace_scroll({
-            size: 300
-        });
-
-
-        //Android's default browser somehow is confused when tapping on label which will lead to dragging the task
-        //so disable dragging when clicking on label
-        var agent = navigator.userAgent.toLowerCase();
-        if(ace.vars['touch'] && ace.vars['android']) {
-            $('#tasks').on('touchstart', function(e){
-                var li = $(e.target).closest('#tasks li');
-                if(li.length == 0)return;
-                var label = li.find('label.inline').get(0);
-                if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
-            });
-        }
-
-        $('#tasks').sortable({
-                    opacity:0.8,
-                    revert:true,
-                    forceHelperSize:true,
-                    placeholder: 'draggable-placeholder',
-                    forcePlaceholderSize:true,
-                    tolerance:'pointer',
-                    stop: function( event, ui ) {
-                        //just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
-                        $(ui.item).css('z-index', 'auto');
-                    }
-                }
-        );
-        $('#tasks').disableSelection();
-        $('#tasks input:checkbox').removeAttr('checked').on('click', function(){
-            if(this.checked) $(this).closest('li').addClass('selected');
-            else $(this).closest('li').removeClass('selected');
-        });
-
-
-        //show the dropdowns on top or bottom depending on window height and menu position
-        $('#task-tab .dropdown-hover').on('mouseenter', function(e) {
-            var offset = $(this).offset();
-
-            var $w = $(window)
-            if (offset.top > $w.scrollTop() + $w.innerHeight() - 100)
-                $(this).addClass('dropup');
-            else $(this).removeClass('dropup');
-        });
-
-    })
-</script>
--->
