@@ -348,7 +348,7 @@ along with this software (see the LICENSE.md file). If not, see
         <#--try{ace.settings.loadState('main-container')}catch(e){}-->
     <#--</script>-->
 
-    <div id="sidebar" class="sidebar                  responsive                    ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+    <div id="sidebar" class="sidebar responsive ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
        <#-- <script type="text/javascript">
             try{ace.settings.loadState('sidebar')}catch(e){}
         </script>-->
@@ -385,7 +385,7 @@ along with this software (see the LICENSE.md file). If not, see
 
         <ul class="nav nav-list" >
 
-            <li>
+            <li class="active open">
                 <a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-desktop"></i><span class="menu-text">HiveMind PM </span><b class="arrow fa fa-angle-down"></b></a>
 
                 <b class="arrow"></b>
@@ -403,7 +403,7 @@ along with this software (see the LICENSE.md file). If not, see
 
                         <b class="arrow"></b>
                     </li>
-                    <li >
+                    <li class="active">
                         <a href="/ace/hm/Project/FindProject">
                             <i class="menu-icon fa fa-caret-right"></i>
                             Projects
@@ -437,7 +437,7 @@ along with this software (see the LICENSE.md file). If not, see
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-list"></i>
-                    <span class="menu-text"> Tables </span>
+                    <span class="menu-text"> HiveMind Admin </span>
 
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -468,7 +468,7 @@ along with this software (see the LICENSE.md file). If not, see
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-pencil-square-o"></i>
-                    <span class="menu-text"> Forms </span>
+                    <span class="menu-text"> POPC ERP </span>
 
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -526,7 +526,7 @@ along with this software (see the LICENSE.md file). If not, see
             <li class="">
                 <a href="widgets.html">
                     <i class="menu-icon fa fa-list-alt"></i>
-                    <span class="menu-text"> Widgets </span>
+                    <span class="menu-text"> Example </span>
                 </a>
 
                 <b class="arrow"></b>
@@ -537,7 +537,7 @@ along with this software (see the LICENSE.md file). If not, see
                     <i class="menu-icon fa fa-calendar"></i>
 
                     <span class="menu-text">
-								Calendar
+								My Account
 
 								<span class="badge badge-transparent tooltip-error" title="" data-original-title="2 Important Events">
 									<i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
@@ -551,7 +551,7 @@ along with this software (see the LICENSE.md file). If not, see
             <li class="">
                 <a href="gallery.html">
                     <i class="menu-icon fa fa-picture-o"></i>
-                    <span class="menu-text"> Gallery </span>
+                    <span class="menu-text"> System </span>
                 </a>
 
                 <b class="arrow"></b>
@@ -560,7 +560,7 @@ along with this software (see the LICENSE.md file). If not, see
             <li class="">
                 <a href="#" class="dropdown-toggle">
                     <i class="menu-icon fa fa-tag"></i>
-                    <span class="menu-text"> More Pages </span>
+                    <span class="menu-text">Tools </span>
 
                     <b class="arrow fa fa-angle-down"></b>
                 </a>
@@ -912,3 +912,22 @@ along with this software (see the LICENSE.md file). If not, see
 <!-- ace scripts -->
 <script src="/ace/assets/js/ace-elements.min.js"></script>
 <script src="/ace/assets/js/ace.min.js"></script>
+<#--
+
+<script>
+
+    alert('===' + $("#sidebar"))
+//    function () {
+        if (!a("#sidebar").hasClass("h-sidebar")) {
+            if (this.checked) a("#sidebar li").addClass("hover").filter(".open").removeClass("open").find("> .submenu").css("display", "none"); else {
+                a("#sidebar li.hover").removeClass("hover");
+                var b = a("#ace-settings-compact");
+                b.length > 0 && b.get(0).checked && b.trigger("click")
+            }
+            a(".sidebar[data-sidebar-hover=true]").ace_sidebar_hover("reset"), a(".sidebar[data-sidebar-scroll=true]").ace_sidebar_scroll("reset"), ace.vars.old_ie && ace.helper.redraw(a("#sidebar")[0])
+        }
+//    }
+
+
+</script>
+-->
