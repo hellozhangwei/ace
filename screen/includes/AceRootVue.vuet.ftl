@@ -986,8 +986,7 @@ along with this software (see the LICENSE.md file). If not, see
                             </strong>,
                             лёгкий, многофункциональный и простой в использовании шаблон для админки на bootstrap 3.3.6. Загрузить исходники с <a href="https://github.com/bopoda/ace">github</a> (with minified ace js/css files).
                         </div>
-
-                        <div id="apps-root">
+                        <div id="apps-root"><#-- NOTE: webrootVue component attaches here, uses this and below for template -->
                             <input type="hidden" id="confMoquiSessionToken" value="${ec.web.sessionToken}">
                             <input type="hidden" id="confAppHost" value="${ec.web.getHostName(true)}">
                             <input type="hidden" id="confAppRootPath" value="${ec.web.servletContext.contextPath}">
@@ -995,11 +994,13 @@ along with this software (see the LICENSE.md file). If not, see
                             <input type="hidden" id="confLinkBasePath" value="${ec.web.servletContext.contextPath}/ace">
                             <input type="hidden" id="confUserId" value="${ec.user.userId!''}">
                             <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">
-                        </div><!--end #apps-root-->
+                                <div class="container-fluid">
+                                    <div class="side-body">
+                                        <subscreens-active></subscreens-active>
+                                    </div>
+                                </div>
+                        </div>
 
-                        <div id="content"><div class="inner"><div class="container-fluid">
-                            <subscreens-active></subscreens-active>
-                        </div></div></div>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.page-content -->
