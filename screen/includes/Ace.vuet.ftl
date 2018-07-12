@@ -350,7 +350,7 @@ along with this software (see the LICENSE.md file). If not, see
         <#--try{ace.settings.loadState('main-container')}catch(e){}-->
     <#--</script>-->
 
-    <div id="sidebar" class="sidebar responsive ace-save-state" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
+    <div id="sidebar" class="sidebar responsive ace-save-state sidebar-fixed sidebar-scroll" data-sidebar="true" data-sidebar-scroll="true" data-sidebar-hover="true">
        <#-- <script type="text/javascript">
             try{ace.settings.loadState('sidebar')}catch(e){}
         </script>-->
@@ -432,13 +432,13 @@ along with this software (see the LICENSE.md file). If not, see
                             <b class="arrow"></b>
                             <ul class="submenu">
                             <template v-for="subscreen1 in navMenuList[1].subscreens">
-                                <li :class="{active:subscreen1.active}"><a :href="getLinkPath(subscreen1.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen1.title}}<template v-if="subscreen1.subscreens"><b class="arrow fa fa-angle-down"></b></template></a><b class="arrow"></b>
-                                    <template v-if="subscreen1.subscreens">
-
+                                <li :class="{open:subscreen1.active}"><a :href="getLinkPath(subscreen1.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa fa-caret-right"></i>{{subscreen1.title}}
+                                    <template v-if="subscreen1.name==navMenuList[2].name && navMenuList[2].subscreens && navMenuList[2].subscreens.length>0"><b class="arrow fa fa-angle-down"></b></template></a><b class="arrow"></b>
+                                    <template v-if="subscreen1.name==navMenuList[2].name && navMenuList[2].subscreens && navMenuList[2].subscreens.length>0">
                                        <b class="arrow"></b>
                                        <ul class="submenu">
-                                           <template v-for="subscreen2 in subscreen1.subscreens">
-                                               <li><a :href="getLinkPath(subscreen2.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen2.title}}</a><b class="arrow"></b></li>
+                                           <template v-for="subscreen2 in navMenuList[2].subscreens">
+                                               <li ><a :href="getLinkPath(subscreen2.pathWithParams)"><i class="menu-icon fa fa-leaf green"></i>{{subscreen2.title}}</a><b class="arrow"></b></li>
                                            </template>
                                        </ul>
                                    </template>
