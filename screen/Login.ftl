@@ -240,12 +240,12 @@
 <!-- basic scripts -->
 
 <!--[if !IE]> -->
-<script src="assets/js/jquery-2.1.4.min.js"></script>
+<script src="/ace/assets/js/jquery-2.1.4.min.js"></script>
 
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="/ace/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
     if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -267,21 +267,21 @@
     //you don't need this, just used for changing background
     jQuery(function($) {
         $('#btn-login-dark').on('click', function(e) {
-            $('body').attr('class', 'login-layout');
+            $('body').attr('class', 'Login');
             $('#id-text2').attr('class', 'white');
             $('#id-company-text').attr('class', 'blue');
 
             e.preventDefault();
         });
         $('#btn-login-light').on('click', function(e) {
-            $('body').attr('class', 'login-layout light-login');
+            $('body').attr('class', 'Login light-login');
             $('#id-text2').attr('class', 'grey');
             $('#id-company-text').attr('class', 'blue');
 
             e.preventDefault();
         });
         $('#btn-login-blur').on('click', function(e) {
-            $('body').attr('class', 'login-layout blur-login');
+            $('body').attr('class', 'Login blur-login');
             $('#id-text2').attr('class', 'white');
             $('#id-company-text').attr('class', 'light-blue');
 
