@@ -11,10 +11,21 @@ You should have received a copy of the CC0 Public Domain Dedication
 along with this software (see the LICENSE.md file). If not, see
 <http://creativecommons.org/publicdomain/zero/1.0/>.
 -->
+
+<div id="apps-root">
+    <input type="hidden" id="confMoquiSessionToken" value="${ec.web.sessionToken}">
+    <input type="hidden" id="confAppHost" value="${ec.web.getHostName(true)}">
+    <input type="hidden" id="confAppRootPath" value="${ec.web.servletContext.contextPath}">
+    <input type="hidden" id="confBasePath" value="${ec.web.servletContext.contextPath}/apps">
+    <input type="hidden" id="confLinkBasePath" value="${ec.web.servletContext.contextPath}/ace">
+    <input type="hidden" id="confUserId" value="${ec.user.userId!''}">
+    <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">
+    <#assign navbarCompList = sri.getThemeValues("STRT_HEADER_NAVBAR_COMP")>
+    <#list navbarCompList! as navbarCompUrl>
+        <input type="hidden" class="confNavPluginUrl" value="${navbarCompUrl}">
+    </#list>
 <div id="navbar" class="navbar navbar-default ace-save-state">
 
-<#assign navbarCompList = sri.getThemeValues("STRT_HEADER_NAVBAR_COMP")>
-<#list navbarCompList! as navbarCompUrl><input type="hidden" class="confNavPluginUrl" value="${navbarCompUrl}"></#list>
     <div class="navbar-container ace-save-state" id="navbar-container">
         <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
             <span class="sr-only">Toggle sidebar</span>
@@ -375,7 +386,74 @@ along with this software (see the LICENSE.md file). If not, see
         </div><!-- /.sidebar-shortcuts -->
 
         <ul class="nav nav-list" >
+<#--
 
+            <template v-if="navMenuList[0]">
+                <template v-for="subscreen in navMenuList[0].subscreens">
+                    <li><a :href="getLinkPath(subscreen.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa " :class="subscreen.image"></i><span class="menu-text">{{subscreen.title}}</span>
+
+                        <template v-if="subscreen.subscreens"><b class="arrow fa fa-angle-down"></b></template></a>
+
+                        <template v-if="subscreen.subscreens">
+
+                            <b class="arrow"></b>
+                            <ul class="submenu">
+                            <template v-for="subscreen1 in subscreen.subscreens">
+                                <li><a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-caret-right"></i>{{subscreen1.title}}<template v-if="subscreen1.subscreens"><b class="arrow fa fa-angle-down"></b></template></a><b class="arrow"></b>
+                                    <template v-if="subscreen1.subscreens">
+
+                                       <b class="arrow"></b>
+                                       <ul class="submenu">
+                                           <template v-for="subscreen2 in subscreen1.subscreens">
+                                               <li><a :href="getLinkPath(subscreen2.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen2.title}}</a><b class="arrow"></b></li>
+                                           </template>
+                                       </ul>
+                                   </template>
+
+                                </li>
+                            </template>
+                            </ul>
+                        </template>
+                    </li>
+                </template>
+            </template>
+-->
+
+<#-----{{navMenuList[1].name}}===-->
+            <template v-if="navMenuList[0]">
+                <template v-for="subscreen in navMenuList[0].subscreens">
+                    <li :class="[{active:subscreen.active}, {open:subscreen.active}]"><a :href="getLinkPath(subscreen.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa " :class="subscreen.image"></i><span class="menu-text">{{subscreen.title}}</span>
+
+                        <template v-if="subscreen.name == navMenuList[1].name"><b class="arrow fa fa-angle-down"></b></template></a>
+                        <#--{{subscreen.name}}-->
+
+                        <template v-if="subscreen.name == navMenuList[1].name">
+
+                            <b class="arrow"></b>
+                            <ul class="submenu">
+                            <template v-for="subscreen1 in navMenuList[1].subscreens">
+                                <li :class="{active:subscreen1.active}"><a :href="getLinkPath(subscreen1.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen1.title}}<template v-if="subscreen1.subscreens"><b class="arrow fa fa-angle-down"></b></template></a><b class="arrow"></b>
+                                    <template v-if="subscreen1.subscreens">
+
+                                       <b class="arrow"></b>
+                                       <ul class="submenu">
+                                           <template v-for="subscreen2 in subscreen1.subscreens">
+                                               <li><a :href="getLinkPath(subscreen2.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen2.title}}</a><b class="arrow"></b></li>
+                                           </template>
+                                       </ul>
+                                   </template>
+
+                                </li>
+                            </template>
+                            </ul>
+                        </template>
+                    </li>
+                </template>
+            </template>
+
+
+
+<#--
             <li class="active open">
                 <a href="#" class="dropdown-toggle"><i class="menu-icon fa fa-desktop"></i><span class="menu-text">HiveMind PM </span><b class="arrow fa fa-angle-down"></b></a>
 
@@ -383,22 +461,10 @@ along with this software (see the LICENSE.md file). If not, see
 
                 <ul class="submenu">
 
-<#--
-                    <template v-for="subscreen in navMenuList[1].subscreens">
-                        <li><a :href="getLinkPath(subscreen.pathWithParams)"><i class="menu-icon fa fa-caret-right"></i>{{subscreen.title}}</a><b class="arrow"></b></li>
-                    </template>-->
-
 
                     <li><a href="/ace/hm/dashboard"><i class="menu-icon fa fa-caret-right"></i>Dashboard</a><b class="arrow"></b></li>
 
-                    <li >
-                        <a href="/ace/hm/Search">
-                            <i class="menu-icon fa fa-caret-right"></i>
-                            Search
-                        </a>
-
-                        <b class="arrow"></b>
-                    </li>
+                    <li><a href="/ace/hm/Search"><i class="menu-icon fa fa-caret-right"></i>Search</a><b class="arrow"></b></li>
                     <li class="active">
                         <a href="/ace/hm/Project/FindProject">
                             <i class="menu-icon fa fa-caret-right"></i>
@@ -699,8 +765,8 @@ along with this software (see the LICENSE.md file). If not, see
                         <b class="arrow"></b>
                     </li>
                 </ul>
-            </li>
-        </ul><!-- /.nav-list -->
+            </li>-->
+        </ul> <!-- /.nav-list -->
 
         <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
             <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
@@ -826,23 +892,24 @@ along with this software (see the LICENSE.md file). If not, see
                             </strong>,
                             лёгкий, многофункциональный и простой в использовании шаблон для админки на bootstrap 3.3.6. Загрузить исходники с <a href="https://github.com/bopoda/ace">github</a> (with minified ace js/css files).
                         </div>
-                        <div id="apps-root"><#-- NOTE: webrootVue component attaches here, uses this and below for template -->
-                            <input type="hidden" id="confMoquiSessionToken" value="${ec.web.sessionToken}">
+                        <#--<div id="apps-root">-->
+                        <#-- NOTE: webrootVue component attaches here, uses this and below for template -->
+                            <#--<input type="hidden" id="confMoquiSessionToken" value="${ec.web.sessionToken}">
                             <input type="hidden" id="confAppHost" value="${ec.web.getHostName(true)}">
                             <input type="hidden" id="confAppRootPath" value="${ec.web.servletContext.contextPath}">
                             <input type="hidden" id="confBasePath" value="${ec.web.servletContext.contextPath}/apps">
                             <input type="hidden" id="confLinkBasePath" value="${ec.web.servletContext.contextPath}/ace">
                             <input type="hidden" id="confUserId" value="${ec.user.userId!''}">
-                            <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">
+                            <input type="hidden" id="confLocale" value="${ec.user.locale.toLanguageTag()}">-->
 
                             <subscreens-active></subscreens-active>
 
-                        </div>
+                        <#--</div>-->
 
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.page-content -->
-        </div><!-- /.main-content -->
+        </div><!-- /.main-content-inner -->
     </div><!-- /.main-content -->
 
     <div class="footer">
@@ -857,7 +924,8 @@ along with this software (see the LICENSE.md file). If not, see
         <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
     </a>
 </div><!--end main-container-->
+</div><!-- /#apps-root -->
 
 <!-- ace scripts -->
-<script src="/ace/assets/js/ace-elements.min.js"></script>
-<script src="/ace/assets/js/ace.min.js"></script>
+<#--<script src="/ace/assets/js/ace-elements.min.js"></script>-->
+<#--<script src="/ace/assets/js/ace.min.js"></script>-->
