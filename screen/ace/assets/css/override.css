@@ -44,7 +44,7 @@ input[type=radio], input[type=checkbox] { height: auto; }
 
 .form-control { display: inline; min-width: 20px; width: auto; max-width: 100%; }
 .input-group { display: inline-block; white-space: nowrap; margin-right: 0; margin-top: -2px; }
-.input-group .form-control { display: inline; min-width: 20px; width: auto; }
+.input-group .form-control { display: inline; min-width: 20px; /*width: auto;*/ }
 .input-group .input-group-addon, .input-group .input-group-btn { display: inline; line-height: 34px; padding: 6px 12px; }
 
 .select2-container--bootstrap .select2-selection--single {height: 35px;}
