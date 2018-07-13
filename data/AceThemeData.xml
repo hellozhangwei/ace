@@ -27,9 +27,20 @@ along with this software (see the LICENSE.md file). If not, see
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="1" resourceTypeEnumId="STRT_STYLESHEET" resourceValue=""/>
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="2" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/font-awesome/4.5.0/css/font-awesome.min.css"/>
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="3" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/bootstrap.min.css"/>
-        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="4" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace.min.css"/>
-        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="5" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace-skins.min.css"/>
-        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="6" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace-rtl.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="51" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="52" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace-skins.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="53" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/ace-rtl.min.css"/>
+
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="10" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="20" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/libs/select2/select2.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="30" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/libs/select2-bootstrap-theme/select2-bootstrap.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="40" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/libs/Selectivity.js/selectivity-full.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="50" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/libs/jstree/themes/default/style.min.css"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="60" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/ace/assets/css/override.css"/>
+
+        <!--<moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="60" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/css/webroot-layout.css"/>-->
+        <!--<moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="70" resourceTypeEnumId="STRT_STYLESHEET" resourceValue="/css/webroot-theme.css"/>-->
+
 
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="1" resourceTypeEnumId="STRT_SCRIPT" resourceValue="/ace/assets/js/ace-extra.min.js"/>
 

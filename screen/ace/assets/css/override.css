@@ -1,0 +1,50 @@
+.btn { margin: 4px 4px 4px 4px;border:none !important;}
+
+nav.form-list-nav .pagination { margin: 6px 6px 0 6px; }
+nav.form-list-nav>form.form-inline { display: inline-block; margin: 2px 6px 0 0; float: left; }
+nav.form-list-nav>.btn { display: inline-block; margin: 6px 6px 0 6px; float: left; }
+nav.form-list-nav>span.select2-container { float: left; margin: 6px 0 6px 0; min-width: 100px; max-width: 160px; }
+.form-control {display: inline;min-width: 20px;width: auto;max-width: 100%;}
+
+.center {text-align: left!important;}
+
+.panel .panel-heading { position: relative; }
+.panel .panel-heading .panel-toolbar { position: absolute; top: 0; right: 0; }
+.panel .panel-toolbar .label { display: inline-block; margin: 4px 4px 4px 0; }
+.panel .panel-heading>h5, .panel .panel-heading>span { display: inline-block; margin-top: 0; margin-bottom: 0; font-size: 16px; }
+.panel, .panel .panel-body { background: transparent; }
+.panel-body>table.table { margin: -15px; width: calc(100% + 30px); max-width: none; }
+
+
+ul.float-box { display: inline-block; list-style: none outside none; margin: 0 0 -8px 0; padding: 0; background-color: #f5f5f5;border: 1px solid #ddd;}
+ul.float-box li { display: inline-block; line-height: 18px; margin: 0 8px 8px 0; padding: 8px; float: left; }
+ul.float-box li.box-narrow { max-width: 300px; }
+
+
+ul.float-plain { display: inline-block; list-style: none outside none; margin: 0 0 -8px 0; padding: 0; }
+ul.float-plain li { display: inline-block; line-height: 18px; margin: 0 8px 8px 0; padding: 8px; float: left; }
+ul.float-plain.condensed { margin: 0; }
+ul.float-plain.condensed li { margin: 0 4px 0 0; padding: 4px; }
+
+.shaded-area { padding: 8px; margin-bottom: 8px; line-height: 18px; }
+span.shaded-area { display: inline-block; white-space: normal; }
+.shaded-area.condensed { padding: 4px; margin-bottom: 4px; }
+
+form {display: inline;}
+input[type=radio], input[type=checkbox] { height: auto; }
+
+
+.form-date-find, .form-range-find { display: inline-block; padding-bottom: 4px; }
+.form-text-find input, .form-range-find input { display: inline-block; }
+
+.select2-container { display: inline-block; min-width: 60px; max-width: 100%; margin-top: -2px; }
+.date-period .select2-container--bootstrap { display: inline-block; }
+
+.modal-dialog {text-align: left;}
+
+.form-control { display: inline; min-width: 20px; width: auto; max-width: 100%; }
+.input-group { display: inline-block; white-space: nowrap; margin-right: 0; margin-top: -2px; }
+.input-group .form-control { display: inline; min-width: 20px; width: auto; }
+.input-group .input-group-addon, .input-group .input-group-btn { display: inline; line-height: 34px; padding: 6px 12px; }
+
+.select2-container--bootstrap .select2-selection--single {height: 35px;}
