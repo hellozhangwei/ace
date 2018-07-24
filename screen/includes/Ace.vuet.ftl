@@ -418,12 +418,11 @@ along with this software (see the LICENSE.md file). If not, see
 -->
 
 <#-----{{navMenuList[1].name}}===-->
-            <template v-if="navMenuList[0]">
+            <#--<template v-if="navMenuList[0]">
                 <template v-for="subscreen in navMenuList[0].subscreens">
                     <li :class="[{active:subscreen.active}, {open:subscreen.active}]" class="hover"><a :href="getLinkPath(subscreen.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa " :class="subscreen.image"></i><span class="menu-text">{{subscreen.title}}</span>
 
                         <template v-if="subscreen.name == navMenuList[1].name"><b class="arrow fa fa-angle-down"></b></template></a>
-                        <#--{{subscreen.name}}-->
 
                         <template v-if="subscreen.name == navMenuList[1].name">
 
@@ -448,7 +447,35 @@ along with this software (see the LICENSE.md file). If not, see
                     </li>
                 </template>
             </template>
+-->
 
+    <template v-if="navMenuList[0]">
+        <template v-for="subscreen in navMenuList[0].subscreens">
+            <li :class="[{active:subscreen.active}, {open:subscreen.active}]" class="hover"><a :href="getLinkPath(subscreen.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa " :class="subscreen.image"></i><span class="menu-text">{{subscreen.title}}</span>
+
+                <template v-if="subscreen.subscreens"><b class="arrow fa fa-angle-down"></b></template></a>
+
+
+                    <b class="arrow"></b>
+                    <ul class="submenu can-scroll">
+                        <template v-for="subscreen1 in subscreen.subscreens">
+                            <li :class="{open:subscreen1.active}" class="hover"><a :href="getLinkPath(subscreen1.pathWithParams)" class="dropdown-toggle"><i class="menu-icon fa fa-caret-right"></i>{{subscreen1.title}}
+                                <template v-if="subscreen1.name==subscreen1.name && subscreen1.subscreens && subscreen1.subscreens.length>0"><b class="arrow fa fa-angle-down"></b></template></a><b class="arrow"></b>
+                                <template v-if="subscreen1.name==subscreen1.name && subscreen1.subscreens && subscreen1.subscreens.length>0">
+                                    <b class="arrow"></b>
+                                    <ul class="submenu can-scroll">
+                                        <template v-for="subscreen2 in subscreen1.subscreens">
+                                            <li ><a :href="getLinkPath(subscreen2.pathWithParams)"><i class="menu-icon fa fa-leaf green"></i>{{subscreen2.title}}</a><b class="arrow"></b></li>
+                                        </template>
+                                    </ul>
+                                </template>
+
+                            </li>
+                        </template>
+                    </ul>
+            </li>
+        </template>
+    </template>
 
 
 <#--

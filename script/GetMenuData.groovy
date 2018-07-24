@@ -10,7 +10,7 @@ import org.moqui.impl.context.ContextJavaUtil
 
 @Field Logger logger = LoggerFactory.getLogger("GetMenuData")
 
-//List menuDataList = getMenuData1(["apps"])
+List menuDataList = getMenuData1(sri.screenUrlInfo.extraPathNameList)
 //if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
 
 
@@ -24,10 +24,40 @@ appsMenu.pathWithParams = currentScreenPath
 appsMenu.title = currentScreenDef.getDefaultMenuName()
 appsMenu.renderModes = currentScreenDef.renderModes
 
+
+/*
+logger.info("================sri.screenUrlInfo.extraPathNameList========${sri.screenUrlInfo.extraPathNameList}=")
+def aa = [
+    "name": "AppList",
+    "title": "App List",
+    "path": "/apps/AppList",
+    "pathWithParams": "/apps/AppList",
+    "image": null,
+    "extraPathList": [],
+    "screenDocList": [],
+    "renderModes": [
+            "all"
+    ]
+]
+
+def pathNameList = sri.screenUrlInfo.extraPathNameList
+
+if(pathNameList.size() >1) {
+    for (int i = 1; i < pathNameList.size(); i++) {
+        logger.info("========${pathNameList[i]}==========")
+    }
+}
+*/
+
+
+
 getMenuTreeData(currentScreenDef, currentScreenPath, appsMenu)
-ec.web.sendJsonResponse([appsMenu])
+//ec.web.sendJsonResponse([appsMenu, aa])
 
 logger.info("====currentMenu========${ContextJavaUtil.jacksonMapper.writeValueAsString(appsMenu)}============")
+
+menuDataList[0].subscreens = appsMenu.subscreens
+if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
 
 
 def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu) {
@@ -153,7 +183,7 @@ List<Map> getMenuData1(ArrayList<String> pathNameList) {
             if ("icon".equals(imageType)) itemMap.imageType = "icon"
             if (active) itemMap.active = true
             if (screenUrlInstance.disableLink) itemMap.disableLink = true
-            subscreensList.add(itemMap)
+            //subscreensList.add(itemMap)
             // not needed: screenStatic:sui.targetScreen.isServerStatic(renderMode)
         }
 
