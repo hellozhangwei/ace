@@ -10,15 +10,22 @@ import org.moqui.impl.context.ContextJavaUtil
 
 @Field Logger logger = LoggerFactory.getLogger("GetMenuData")
 
-List menuDataList = getMenuData1(["apps"])
-if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
+//List menuDataList = getMenuData1(["apps"])
+//if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
 
 
 ScreenDefinition currentScreenDef = sri.sfi.getScreenDefinition("component://webroot/screen/webroot/apps.xml")
-def currentScreenPath = "apps"
+def currentScreenPath = "/apps"
 def appsMenu = [:]
 
+appsMenu.name = currentScreenDef.getDefaultMenuName()
+appsMenu.path = currentScreenPath
+appsMenu.pathWithParams = currentScreenPath
+appsMenu.title = currentScreenDef.getDefaultMenuName()
+appsMenu.renderModes = currentScreenDef.renderModes
+
 getMenuTreeData(currentScreenDef, currentScreenPath, appsMenu)
+ec.web.sendJsonResponse([appsMenu])
 
 logger.info("====currentMenu========${ContextJavaUtil.jacksonMapper.writeValueAsString(appsMenu)}============")
 
@@ -27,27 +34,40 @@ def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu
 
     List<SubscreensItem> subscreensItems = parentScreenDef.getSubscreensItemsSorted()
 
-    appsMenu.name = parentScreenDef.getDefaultMenuName()
-
-    def subMenus = []
+    def subscreens = []
 
     subscreensItems.each {currentSubscreensItem->
         ScreenDefinition currentScreenDef = sri.sfi.getScreenDefinition(currentSubscreensItem.location)
         String currentScreenPath = "${parentScreenPath}/${currentSubscreensItem.name}"
         ScreenUrlInfo.UrlInstance currentUrlInfo = sri.buildUrl(currentScreenPath)
-
+        ScreenUrlInfo sui = currentUrlInfo.sui
         if(currentScreenDef && currentSubscreensItem.getMenuInclude() && currentUrlInfo?.isPermitted()) {
-            def subMenuItem = [name:currentSubscreensItem.menuTitle, url:currentUrlInfo.url]
-            subMenus.add(subMenuItem)
-            getMenuTreeData(currentScreenDef, currentScreenPath, subMenuItem)
-        }
 
-        println("=====currentSubscreensItem.menuTitle========${currentSubscreensItem.menuTitle}===========${currentSubscreensItem.getMenuInclude()}=======${currentUrlInfo?.isPermitted()}========${currentUrlInfo.url}====")
+            String pathWithParams = "/" + sui.preTransitionPathNameList.join("/")
+            String parmString = currentUrlInfo.getParameterString()
+            if (!parmString.isEmpty()) pathWithParams += ('?' + parmString)
+
+            String image = sui.menuImage
+            String imageType = sui.menuImageType
+            if (image != null && image.length() > 0 && (imageType == null || imageType.length() == 0 || "url-screen".equals(imageType)))
+                image = sri.buildUrl(image).path
+
+
+            def itemMap = [name:sui.fullPathNameList.last(), title:ec.resource.expand(currentSubscreensItem.menuTitle, "")
+                           ,path: currentScreenPath,pathWithParams:pathWithParams,image:image,renderModes:sui.targetScreen.renderModes]
+
+            if ("icon".equals(imageType)) itemMap.imageType = "icon"
+            //if (active) itemMap.active = true
+            if (currentUrlInfo.disableLink) itemMap.disableLink = true
+
+            subscreens.add(itemMap)
+            getMenuTreeData(currentScreenDef, currentScreenPath, itemMap)
+        }
 
     }
 
-    if (subMenus) {
-        appsMenu.subMenus = subMenus
+    if (subscreens) {
+        appsMenu.subscreens = subscreens
     }
 
 }
