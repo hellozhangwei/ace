@@ -55,7 +55,7 @@ if(pathNameList.size() >1) {
 getMenuTreeData(currentScreenDef, currentScreenPath, appsMenu)
 //ec.web.sendJsonResponse([appsMenu, aa])
 
-logger.info("====currentMenu========${ContextJavaUtil.jacksonMapper.writeValueAsString(appsMenu)}============")
+//logger.info("====currentMenu========${ContextJavaUtil.jacksonMapper.writeValueAsString(appsMenu)}============")
 
 menuDataList[0].subscreens = appsMenu.subscreens
 if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
@@ -88,7 +88,10 @@ def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu
                            ,path: currentScreenPath,pathWithParams:pathWithParams,image:image,renderModes:sui.targetScreen.renderModes]
 
             if ("icon".equals(imageType)) itemMap.imageType = "icon"
-            //if (active) itemMap.active = true
+
+            def active = ("/" + sri.screenUrlInfo.extraPathNameList.join("/")).indexOf(currentScreenPath)>=0
+            if (active) itemMap.active = true
+
             if (currentUrlInfo.disableLink) itemMap.disableLink = true
 
             subscreens.add(itemMap)
