@@ -89,7 +89,7 @@ def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu
 
             if ("icon".equals(imageType)) itemMap.imageType = "icon"
 
-            def active = ("/" + sri.screenUrlInfo.extraPathNameList.join("/")).indexOf(currentScreenPath)>=0
+            def active = ("/" + sri.screenUrlInfo.extraPathNameList.join("/") + "/").indexOf(currentScreenPath + "/")>=0
             if (active) itemMap.active = true
 
             if (currentUrlInfo.disableLink) itemMap.disableLink = true
