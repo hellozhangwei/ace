@@ -10,9 +10,10 @@ import org.moqui.impl.context.ContextJavaUtil
 
 @Field Logger logger = LoggerFactory.getLogger("GetMenuData")
 
-List menuDataList = getMenuData1(sri.screenUrlInfo.extraPathNameList)
+//List menuDataList = getMenuData1(sri.screenUrlInfo.extraPathNameList)
 //if (menuDataList != null) ec.web.sendJsonResponse(menuDataList)
 
+List menuDataList = sri.getMenuData(sri.screenUrlInfo.extraPathNameList)
 
 ScreenDefinition currentScreenDef = sri.sfi.getScreenDefinition("component://webroot/screen/webroot/apps.xml")
 def currentScreenPath = "/apps"
@@ -71,7 +72,7 @@ def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu
         String currentScreenPath = "${parentScreenPath}/${currentSubscreensItem.name}"
         ScreenUrlInfo.UrlInstance currentUrlInfo = sri.buildUrl(currentScreenPath)
         ScreenUrlInfo sui = currentUrlInfo.sui
-        if(currentScreenDef && currentSubscreensItem.getMenuInclude() && currentUrlInfo?.isPermitted()) {
+        if(currentScreenDef && currentSubscreensItem.getMenuInclude() && currentUrlInfo?.isPermitted() && !currentScreenDef.hasRequired) {
 
             String pathWithParams = "/" + sui.preTransitionPathNameList.join("/")
             String parmString = currentUrlInfo.getParameterString()
@@ -101,6 +102,7 @@ def getMenuTreeData(ScreenDefinition parentScreenDef, parentScreenPath, appsMenu
     }
 
 }
+/*
 
 List<Map> getMenuData1(ArrayList<String> pathNameList) {
 
@@ -226,6 +228,7 @@ List<Map> getMenuData1(ArrayList<String> pathNameList) {
     return menuDataList
 }
 
+*/
 
 /*
 
