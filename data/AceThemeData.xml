@@ -44,6 +44,9 @@ along with this software (see the LICENSE.md file). If not, see
 
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="1" resourceTypeEnumId="STRT_SCRIPT" resourceValue="/ace/assets/js/ace-extra.min.js"/>
 
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="130" resourceTypeEnumId="STRT_HEADER_NAVBAR_COMP" resourceValue="/ace/lib/MyAccountNav.js"/>
+        <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="135" resourceTypeEnumId="STRT_HEADER_NAVBAR_COMP" resourceValue="/ace/lib/ActiveOrgNav.js"/>
+
         <!-- Logo, icon, body class -->
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="100" resourceTypeEnumId="STRT_HEADER_LOGO" resourceValue="/images/MoquiLogoSmall.png"/>
         <moqui.screen.ScreenThemeResource screenThemeId="ACE" sequenceNum="101" resourceTypeEnumId="STRT_SHORTCUT_ICON" resourceValue="/favicon.ico"/>

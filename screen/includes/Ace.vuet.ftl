@@ -71,10 +71,10 @@ along with this software (see the LICENSE.md file). If not, see
 
                                                     <ul class="dropdown-menu">
                                                     <#if activeOrg?has_content>
-                                                        <li><a href="${sri.buildUrl('/apps/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=">Clear Active Organization</a></li>
+                                                        <li><a href="${sri.buildUrl('/ace/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=">Clear Active Organization</a></li>
                                                     </#if>
                                                     <#if userOrgList?has_content><#list userOrgList as userOrg>
-                                                        <li><a href="${sri.buildUrl('/apps/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=${userOrg.partyId}">${userOrg.pseudoId}: ${userOrg.organizationName}</a></li>
+                                                        <li><a href="${sri.buildUrl('/ace/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=${userOrg.partyId}">${userOrg.pseudoId}: ${userOrg.organizationName}</a></li>
                                                     </#list></#if>
                                                     </ul>
 
@@ -269,12 +269,12 @@ along with this software (see the LICENSE.md file). If not, see
                 </ul>-->
                 <template v-for="navPlugin in navPlugins"><component :is="navPlugin"></component></template>
 
-                <form class="navbar-form navbar-left form-search" role="search">
+                <form class="navbar-form navbar-left form-search" role="search" action="/ace/PopcAdmin/Search">
                     <div class="form-group">
-                        <input type="text" placeholder="search">
+                        <input type="text" placeholder="search" name="queryString">
                     </div>
 
-                    <button type="button" class="btn btn-mini btn-info2">
+                    <button type="submit" class="btn btn-mini btn-info2">
                         <i class="ace-icon fa fa-search icon-only bigger-110"></i>
                     </button>
                 </form>
