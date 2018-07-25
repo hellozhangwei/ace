@@ -28,7 +28,7 @@ along with this software (see the LICENSE.md file). If not, see
     <div id="navbar" class="navbar navbar-default    navbar-collapse       h-navbar ace-save-state">
         <div class="navbar-container ace-save-state" id="navbar-container">
             <div class="navbar-header pull-left">
-                <a href="index.html" class="navbar-brand">
+                <a href="/" class="navbar-brand">
                     <small>
                         <i class="fa fa-leaf"></i>
                         Moqui
@@ -56,92 +56,31 @@ along with this software (see the LICENSE.md file). If not, see
                 <ul class="nav ace-nav" style="">
                     <li class="transparent dropdown-modal">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="ace-icon fa fa-bell icon-animated-bell"></i>
+                            <i class="ace-icon fa fa-globe"></i>
+                            ${(activeOrg.pseudoId)!}
                         </a>
 
                         <div class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
                             <div class="tabbable">
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#navbar-tasks">
-                                            Tasks
-                                            <span class="badge badge-danger">4</span>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a data-toggle="tab" href="#navbar-messages">
-                                            Messages
-                                            <span class="badge badge-danger">5</span>
-                                        </a>
-                                    </li>
-                                </ul><!-- .nav-tabs -->
 
                                 <div class="tab-content">
                                     <div id="navbar-tasks" class="tab-pane in active">
                                         <ul class="dropdown-menu-right dropdown-navbar dropdown-menu">
                                             <li class="dropdown-content ace-scroll" style="position: relative;"><div class="scroll-track" style="display: none;"><div class="scroll-bar"></div></div><div class="scroll-content" style="max-height: 200px;">
                                                 <ul class="dropdown-menu dropdown-navbar">
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="clearfix">
-                                                                <span class="pull-left">Software Update</span>
-                                                                <span class="pull-right">65%</span>
-                                                            </div>
 
-                                                            <div class="progress progress-mini">
-                                                                <div style="width:65%" class="progress-bar"></div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
+                                                    <ul class="dropdown-menu">
+                                                    <#if activeOrg?has_content>
+                                                        <li><a href="${sri.buildUrl('/apps/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=">Clear Active Organization</a></li>
+                                                    </#if>
+                                                    <#if userOrgList?has_content><#list userOrgList as userOrg>
+                                                        <li><a href="${sri.buildUrl('/apps/setPrefGoLast').url}?preferenceKey=ACTIVE_ORGANIZATION&preferenceValue=${userOrg.partyId}">${userOrg.pseudoId}: ${userOrg.organizationName}</a></li>
+                                                    </#list></#if>
+                                                    </ul>
 
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="clearfix">
-                                                                <span class="pull-left">Hardware Upgrade</span>
-                                                                <span class="pull-right">35%</span>
-                                                            </div>
-
-                                                            <div class="progress progress-mini">
-                                                                <div style="width:35%" class="progress-bar progress-bar-danger"></div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="clearfix">
-                                                                <span class="pull-left">Unit Testing</span>
-                                                                <span class="pull-right">15%</span>
-                                                            </div>
-
-                                                            <div class="progress progress-mini">
-                                                                <div style="width:15%" class="progress-bar progress-bar-warning"></div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#">
-                                                            <div class="clearfix">
-                                                                <span class="pull-left">Bug Fixes</span>
-                                                                <span class="pull-right">90%</span>
-                                                            </div>
-
-                                                            <div class="progress progress-mini progress-striped active">
-                                                                <div style="width:90%" class="progress-bar progress-bar-success"></div>
-                                                            </div>
-                                                        </a>
-                                                    </li>
                                                 </ul>
                                             </div></li>
 
-                                            <li class="dropdown-footer">
-                                                <a href="#">
-                                                    See tasks with details
-                                                    <i class="ace-icon fa fa-arrow-right"></i>
-                                                </a>
-                                            </li>
                                         </ul>
                                     </div><!-- /.tab-pane -->
 
@@ -253,8 +192,7 @@ along with this software (see the LICENSE.md file). If not, see
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <img class="nav-user-photo" src="/ace/assets/images/avatars/user.jpg" alt="Jason's Photo">
                             <span class="user-info">
-									<small>Welcome,</small>
-									Jason
+									<small>Welcome,</small> ${(ec.user.userAccount.userFullName)!''}
 								</span>
 
                             <i class="ace-icon fa fa-caret-down"></i>
@@ -262,23 +200,23 @@ along with this software (see the LICENSE.md file). If not, see
 
                         <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
                             <li>
-                                <a href="#">
+                                <a href="/ace/my/User/Account">
                                     <i class="ace-icon fa fa-cog"></i>
-                                    Settings
+                                    My Account
                                 </a>
                             </li>
 
                             <li>
-                                <a href="profile.html">
+                                <a href="/ace/my/User/ContactInfo">
                                     <i class="ace-icon fa fa-user"></i>
-                                    Profile
+                                    My Contact
                                 </a>
                             </li>
 
                             <li class="divider"></li>
 
                             <li>
-                                <a href="#">
+                                <a href="${sri.buildUrl("/Login/logout").url}">
                                     <i class="ace-icon fa fa-power-off"></i>
                                     Logout
                                 </a>
@@ -289,7 +227,7 @@ along with this software (see the LICENSE.md file). If not, see
             </div>
 
             <nav role="navigation" class="navbar-menu pull-left collapse navbar-collapse">
-                <ul class="nav navbar-nav">
+                <#--<ul class="nav navbar-nav">
                     <li class="">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             Overview
@@ -325,10 +263,11 @@ along with this software (see the LICENSE.md file). If not, see
                         <a href="#">
                             <i class="ace-icon fa fa-envelope"></i>
                             Messages
-                            <span class="badge badge-warning">5</span>
+                            <span class="badge badge-warning">45</span>
                         </a>
                     </li>
-                </ul>
+                </ul>-->
+                <template v-for="navPlugin in navPlugins"><component :is="navPlugin"></component></template>
 
                 <form class="navbar-form navbar-left form-search" role="search">
                     <div class="form-group">

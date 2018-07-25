@@ -35,7 +35,11 @@ along with this software (see the LICENSE.md file). If not, see
             // Vue instance, in footer so runs after page loaded
             footer_scripts.add('/js/WebrootVue.js')
         }
-    ]]></script></pre-actions>
+    ]]></script>
+
+        <service-call name="mantle.party.PartyServices.setup#UserOrganizationInfo" out-map="context"/>
+
+    </pre-actions>
 
     <widgets>
         <render-mode>
