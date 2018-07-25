@@ -48,3 +48,9 @@ input[type=radio], input[type=checkbox] { height: auto; }
 .input-group .input-group-addon, .input-group .input-group-btn { display: inline; line-height: 34px; padding: 6px 12px; }
 
 .select2-container--bootstrap .select2-selection--single {height: 35px;}
+
+/* these are still used when a row has more than 2 fields in it */
+.big-row-item { display: inline-block; margin-left: 15px; margin-right: 15px; }
+.big-row-item input, .big-row-item select, .big-row-item span.select2-container { display: inline-block; }
+.big-row-item>.form-group { margin-bottom: 0; }
+.big-row-item>.form-group>label { display: block; text-align: left; }
