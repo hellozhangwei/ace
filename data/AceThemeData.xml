@@ -17,7 +17,7 @@ along with this software (see the LICENSE.md file). If not, see
         <moqui.screen.SubscreensItem screenLocation="component://webroot/screen/webroot.xml" subscreenName="Login" subscreenLocation="component://ace/screen/Login.xml"/>
         <moqui.screen.SubscreensItem screenLocation="component://webroot/screen/webroot.xml" subscreenName="ace" subscreenLocation="component://ace/screen/ace.xml"/>
 
-        <moqui.screen.SubscreensDefault screenLocation="component://webroot/screen/webroot.xml" defaultSeqId="1" conditionExpression="1==1" subscreenName="ace"/>
+        <!--<moqui.screen.SubscreensDefault screenLocation="component://webroot/screen/webroot.xml" defaultSeqId="1" conditionExpression="1==1" subscreenName="ace"/>-->
 
         <moqui.screen.ScreenTheme screenThemeId="ACE" screenThemeTypeEnumId="STT_INTERNAL" description="Ace Theme"/>
         <!--<moqui.security.UserScreenTheme userId="" screenThemeTypeEnumId="STT_INTERNAL" screenThemeId="ACE"/>-->
